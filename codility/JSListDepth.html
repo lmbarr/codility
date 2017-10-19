@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dado un documento DOM, calcula la profundidad máxima de listas UL/OL.</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <script type="text/javascript">
+
+
+        $(document).ready(function(){
+            function solution() {
+                var ol_list = document.getElementsByTagName('ol');
+                var ul_list = document.getElementsByTagName('ul');
+                var list = Array.from(ol_list).concat(Array.from(ul_list));
+                // console.log(list);
+                max = 0;
+                for (var i = 0; i < list.length; i++) {
+                    var list_parents = $(list[i]).parents().filter('ol, ul');
+                    // console.log(list_parents);
+                    if (max < list_parents.length+1){
+                        max = list_parents.length+1;
+                    }
+                }
+                console.log(max);
+            }
+            solution();
+        });
+
+        </script>
+    </head>
+    <body>
+        <div class="">
+            <div class="">
+                <ul>
+                    <div class="">
+                        <ol>
+                            
+                        </ol>
+
+                    </div>
+                </ul>
+
+            </div>
+
+        </div>
+    </body>
+</html>
