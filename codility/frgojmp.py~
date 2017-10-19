@@ -1,9 +1,0 @@
-def solution(X, Y, D):
-    from math import ceil
-    return int(ceil((Y - X) / float(D)))
-
-print solution(10, 85, 30)
-print solution(1, 1, 1)
-print solution(10**9, 10**9, 10**9)
-print solution(10, 85, 30)
-print solution(10, 85, 30)
